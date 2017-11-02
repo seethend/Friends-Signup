@@ -21,7 +21,8 @@
 
 
 <div id="online-user" onclick="onlineboxtogle();"><p>Online Users</p></div><hr>
-<div id="scroll-div">
+<div id="hidescroll-div">
+  <div id="hidescroll-div-two">
 	<c:forEach var="forow" items="${friendone.rows}">
 		<c:if test="${forow.STATUS==1}">
 			<c:if test="${sessionScope.UID==forow.FRIENDS_ONE}">
@@ -126,14 +127,5 @@
 			</c:if>
 		</c:if>
 	</c:forEach>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-

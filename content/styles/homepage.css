@@ -10,6 +10,8 @@ html
 
 body
 {
+    width: 100%;
+
     background-color: #17222d;
 }
 
@@ -900,19 +902,35 @@ body #online-box
     background-color: white;
 }
 
-body #online-box #scroll-div
+body #online-box #hidescroll-div
 {
-    height: 280px;
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
 }
 
-#online-box #scroll-div #frnd-div
+body #online-box #hidescroll-div-two
+{
+    position: absolute;
+    top: 0;
+    right: -15px;
+    bottom: 0;
+    left: 0;
+
+    overflow: auto;
+}
+
+#online-box #hidescroll-div #frnd-div
 {
     width: 240px;
     height: 40px;
     margin-bottom: 6px;
 }
 
-#online-box #scroll-div #frnd-div #onuser-img
+#online-box #hidescroll-div #frnd-div #onuser-img
 {
     width: 30px;
     height: 30px;
@@ -949,7 +967,7 @@ body #online-box #scroll-div
     border-color: rgba(128, 128, 128, .36);
 }
 
-#online-box #scroll-div .frnd-on
+#online-box #hidescroll-div .frnd-on
 {
     font-size: 15px;
 
@@ -962,7 +980,7 @@ body #online-box #scroll-div
     padding: 5px;
 }
 
-#online-box #scroll-div #active-light-on
+#online-box #hidescroll-div #active-light-on
 {
     position: relative;
     top: -20px;
@@ -975,7 +993,7 @@ body #online-box #scroll-div
     background-color: green;
 }
 
-#online-box #scroll-div #active-light-off
+#online-box #hidescroll-div #active-light-off
 {
     position: relative;
     top: -25px;
@@ -990,7 +1008,7 @@ body #online-box #scroll-div
     background-color: #eee;
 }
 
-#online-box #scroll-div .frnd-on:hover
+#online-box #hidescroll-div .frnd-on:hover
 {
     cursor: pointer;
 
@@ -998,7 +1016,7 @@ body #online-box #scroll-div
     background-color: #cecece;
 }
 
-body #online-box #scroll-div:hover
+body #online-box #hidescroll-div:hover
 {
     overflow-y: auto;
 }
@@ -1009,7 +1027,7 @@ body #online-box #scroll-div:hover
 
 body #posts-div
 {
-    width: 700px;
+    width: 90%;
     margin: 0 auto;
     margin-top: 70px;
 
