@@ -1,0 +1,1328 @@
+/**********START COMMON************/
+html
+{
+    font-family: sans-serif;
+
+    overflow-x: hidden;
+
+    background-color: #17222d;
+}
+
+body
+{
+    background-color: #17222d;
+}
+
+html:hover
+{
+    overflow-x: auto;
+}
+
+.navbar
+{
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+
+    width: 100%;
+
+    border-radius: 0;
+}
+
+.navbar-brand > img
+{
+    display: block;
+
+    width: 80px;
+    height: 40px;
+    margin-top: -10px;
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+    font-size: 15px;
+}
+
+.dropdown-menu
+{
+    right: 10%;
+    left: 10%;
+}
+
+#newfrndreq
+{
+    font-weight: 900;
+
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 115px;
+
+    margin: 0;
+    padding: 1px 5px;
+
+    color: white;
+    border-radius: 10px;
+    background: red;
+}
+
+#newmsgs
+{
+    font-weight: 900;
+
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 75px;
+
+    margin: 0;
+    padding: 1px 5px;
+
+    color: white;
+    border-radius: 10px;
+    background: red;
+}
+
+/**********END COMMON************/
+
+/*****************START users.jsp && friendrequests.jsp*********/
+
+#new-user
+{
+    width: 85%;
+    height: 100px;
+    margin: 0 auto;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: rgba(45, 45, 45, .52);
+}
+
+#new-user img
+{
+    float: left;
+
+    margin-top: 10px;
+    margin-left: 10px;
+
+    border-radius: 35px;
+}
+
+#new-user p
+{
+    font-size: 1.5em;
+
+    position: absolute;
+
+    float: left;
+
+    margin-top: 25px;
+    margin-left: 100px;
+
+    color: white;
+}
+
+/*****************END users.jsp && friendrequests.jsp*********/
+
+#div-container
+{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    background-color: #1c293a;
+}
+
+/*************START friends.jsp*****************/
+
+#new-friend
+{
+    width: 85%;
+    height: 100px;
+    margin: 0 auto;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: rgba(45, 45, 45, .52);
+}
+
+#new-friend img
+{
+    float: left;
+
+    margin-top: 10px;
+    margin-left: 10px;
+
+    border-radius: 35px;
+}
+
+#new-friend p
+{
+    font-size: 1.5em;
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+
+    color: white;
+}
+
+#new-friend #friendemail
+{
+    font-size: 16px;
+}
+
+#main-div
+{
+    position: relative;
+    bottom: 50%;
+
+    margin-left: 75%;
+}
+
+#main-div #main-btn
+{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+    width: 90px;
+    height: 33px;
+
+    color: black;
+    border-color: #888;
+    outline: grey;
+    background: white;
+}
+
+#main-div #req-btn
+{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+
+    position: absolute;
+    right: 15px;
+
+    width: 100px;
+    height: 33px;
+
+    border-style: groove;
+    border-color: #888;
+    outline: grey;
+}
+
+#main-div #main-btn #btn-img
+{
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+#a-content
+{
+    position: absolute;
+    z-index: 2;
+    top: 34px;
+
+    display: none;
+
+    width: 200px;
+    margin-top: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    transition: display 1s;
+    text-align: center;
+
+    border-style: solid;
+    border-color: #aaa;
+    background-color: white;
+}
+
+#a-content hr
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    border-color: #949494;
+}
+
+#a-content a
+{
+    display: block;
+
+    padding: 2px;
+
+    text-decoration: none;
+
+    color: black;
+}
+
+#main-div:hover #a-content
+{
+    z-index: 1;
+
+    display: block;
+}
+
+#a-content a:hover
+{
+    color: white;
+    background-color: #285bea;
+}
+
+/*************END friends.jsp*****************/
+
+/*************START profile.jsp*****************/
+
+#profile-container
+{
+    display: inline;
+}
+
+#profile-container p
+{
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+
+    position: relative;
+
+    margin-left: 30%;
+
+    color: white;
+}
+
+
+#profile-container #profile-pic
+{
+    position: absolute;
+    top: 100px;
+    left: 80%;
+
+    border-radius: 20px;
+}
+
+#ul-field
+{
+    width: 500px;
+    margin-bottom: 5px;
+    margin-left: 26%;
+    padding: 10px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    background-color: #113247;
+}
+
+#ul-field #profile-ul
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#ul-field #profile-ul li
+{
+    font-size: 20px;
+    font-weight: bold;
+
+    display: inline;
+
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    color: blue;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+
+#ul-field #profile-ul li:hover
+{
+    cursor: pointer;
+
+    background-color: #eee;
+}
+
+#ul-about
+{
+    position: relative;
+
+    display: none;
+
+    width: 700px;
+    height: 400px;
+    margin-left: 19%;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#ul-about #ul-info
+{
+    font-size: 2em;
+
+    margin: 10px;
+    padding: 20px;
+
+    background-color: #ddd;
+}
+
+#ul-about p
+{
+    font-size: 20px;
+    font-weight: bold;
+
+    position: relative;
+
+    display: block;
+
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+hr
+{
+    margin-right: 10%;
+    margin-left: 10%;
+
+    border-color: #949494;
+}
+
+#ul-friends
+{
+    position: relative;
+
+    display: none;
+    overflow-y: hidden;
+
+    width: 700px;
+    height: 400px;
+    margin-left: 19%;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    background-color: #1c293a;
+}
+
+#ul-friends #ul-info
+{
+    font-size: 2em;
+    font-weight: bold;
+
+    margin: 10px;
+    padding: 20px;
+
+    background-color: #ddd;
+}
+
+#ul-friends:hover
+{
+    overflow-y: auto;
+}
+
+/*************START profile.jsp*****************/
+
+/*******************START UserProfileName**********************/
+
+.hovername:hover
+{
+    cursor: pointer;
+
+    text-decoration-color: blue;
+}
+
+/*******************END UserProfileName**********************/
+
+/*****************START Message Box******************/
+
+#msg-box
+{
+    position: fixed;
+    z-index: 5;
+    right: 270px;
+    bottom: 0;
+
+    display: none;
+
+    width: 280px;
+    height: 330px;
+
+    transition: height 1s;
+
+    border-style: groove;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+}
+
+#msg-box #frnd-div
+{
+    position: relative;
+    top: -1px;
+    left: -1px;
+
+    width: 250px;
+    height: 25px;
+    margin-bottom: -60px;
+
+    border-style: groove;
+    border-top: none;
+    border-right: black;
+    border-bottom-color: black;
+    border-left: black;
+    background-color: #4080ff;
+}
+
+#msg-box #close-msgbox
+{
+    position: relative;
+    top: 2px;
+
+    float: right;
+
+    width: 30px;
+    height: 25px;
+
+    color: #acacac;
+    border-style: groove;
+    border-top: none;
+    border-right: black;
+    border-bottom-color: black;
+    border-left: black;
+    background-color: #4080ff;
+}
+
+#msg-box #close-msgbox p
+{
+    font-size: 2em;
+
+    margin-top: -8px;
+}
+
+#msg-box #close-msgbox:hover p
+{
+    cursor: pointer;
+
+    color: white;
+}
+
+#msg-box #frnd-div #user-name
+{
+    font-family: sans-serif;
+    font-size: 1em;
+
+    position: relative;
+
+    width: 120px;
+    margin-right: 100px;
+    margin-left: 10px;
+    padding-top: 3px;
+
+    text-decoration: none;
+
+    color: white;
+}
+
+#msg-box #text-box
+{
+    font-family: serif;
+    font-size: 14px;
+
+    position: fixed;
+    bottom: 2px;
+
+    width: 224px;
+    height: 30px;
+
+    border-style: groove;
+    border-bottom: none;
+    outline: grey;
+}
+
+#disp-msg
+{
+    overflow-y: hidden;
+
+    width: 99%;
+    height: 270px;
+    margin: 0 auto;
+
+    border-style: hidden;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#msgContainer
+{
+    position: relative;
+    top: 0;
+
+    overflow: auto;
+
+    width: 100%;
+    height: 270px;
+
+    background-color: white;
+}
+
+#disp-msg #newmymsg
+{
+    float: left;
+
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#disp-msg #newmymsg #mymsg
+{
+    font-size: 16px;
+
+    float: left;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    padding: 5px;
+
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: #dfe2e8;
+}
+
+#disp-msg #newfrndmsg
+{
+    float: right;
+
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#disp-msg #newfrndmsg #frndmsg
+{
+    font-size: 16px;
+
+    float: right;
+
+    margin-top: 0;
+    margin-right: 10px;
+    margin-bottom: 0;
+    padding: 5px;
+
+    color: white;
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: #4080ff;
+}
+
+#msgController
+{
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+
+    width: 100%;
+}
+
+#txtMsg
+{
+    width: 700px;
+    height: 30px;
+}
+
+#show-typing
+{
+    position: absolute;
+    z-index: 12;
+    right: 360px;
+    bottom: 40px;
+}
+
+#show-typing #typing-gif
+{
+    position: fixed;
+    z-index: 12;
+    right: 380px;
+    bottom: 37px;
+
+    width: 65px;
+    height: 25px;
+
+    border-radius: 20px;
+}
+
+
+#msg-box #toggle-msg-box #hide-msg-box #typing-status
+{
+    position: absolute;
+    z-index: 100;
+    top: 260px;
+    left: 35%;
+
+    width: 70px;
+    height: 30px;
+
+    border-radius: 10px;
+}
+
+.sendmsg:hover,
+.btnrefresh:hover
+{
+    background-color: #ddd;
+}
+
+#disp-msg:hover
+{
+    overflow-y: auto;
+}
+
+#msg-box #frnd-div #user-name:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
+
+    text-decoration-color: white;
+}
+
+#msg-box #frnd-div:hover
+{
+    cursor: pointer;
+}
+
+
+/*****************END Message Box******************/
+
+
+/****************START Settings.jsp********************/
+
+#allsettings
+{
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    background-color: #1c293a;
+}
+
+#allsettings #upload-profile
+{
+    position: relative;
+
+    padding: 30px;
+}
+
+#allsettings p
+{
+    font-size: 1.2em;
+    font-weight: bolder;
+
+    position: relative;
+
+    margin-top: 0;
+    margin-left: 0;
+
+    color: white;
+}
+
+#allsettings td
+{
+    color: white;
+}
+
+#allsettings #updatemsg
+{
+    font-size: 1em;
+
+    position: absolute;
+
+    margin-top: 35px;
+    margin-left: 30%;
+}
+
+#allsettings #upload-profile #form1
+{
+    font-size: 15px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 10px;
+    left: 50%;
+}
+
+#allsettings #upload-profile #form1 #addphoto
+{
+    font-family: sans-serif;
+    font-size: .9em;
+    font-weight: 600;
+
+    position: relative;
+
+    margin-top: 20px;
+    margin-left: 75px;
+    padding: 5px 12px;
+
+    border-style: groove;
+    border-radius: 4px;
+    outline: grey;
+    background-color: white;
+}
+
+input[type=file]
+{
+    display: block;
+
+    margin-left: 20px;
+}
+
+#allsettings #upload-profile #form1 #addphoto:hover
+{
+    background-color: #eee;
+}
+
+#allsettings #form1-hr
+{
+    margin-top: 20px;
+    margin-right: 0;
+    margin-left: 0;
+
+    border-style: groove;
+    border-color: #949494;
+}
+
+#allsettings #changedata
+{
+    position: relative;
+
+    padding: 30px;
+}
+
+#allsettings #changedata #form2
+{
+    font-size: 15px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 10px;
+    left: 50%;
+
+    margin-left: 50px;
+}
+
+#allsettings #changedata #form2 input
+{
+    width: 200px;
+    margin-left: -30px;
+    padding: 5px;
+
+    color: black;
+    border-color: #b9b9b9;
+    border-radius: 4px;
+    outline: grey;
+}
+
+#allsettings #changedata #form2 #changedatabtn
+{
+    font-family: sans-serif;
+    font-size: .9em;
+    font-weight: 600;
+
+    position: relative;
+
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px 12px;
+
+    border-style: groove;
+    border-radius: 4px;
+    outline: grey;
+    background-color: white;
+}
+
+#allsettings #form2-hr
+{
+    margin-top: 30px;
+
+    border-style: groove;
+    border-color: #949494;
+}
+
+#allsettings #changedata #form2 #changedatabtn:hover
+{
+    background-color: #eee;
+}
+
+/****************END Settings.jsp********************/
+
+
+/****************START Online Box********************/
+
+body #online-box
+{
+    position: fixed;
+    z-index: 3;
+    right: 5px;
+    bottom: 0;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    width: 250px;
+    height: 300px;
+
+    transition: height 1s;
+
+    border-style: groove;
+    border-color: rgba(128, 128, 128, .36);
+    background-color: white;
+}
+
+body #online-box #scroll-div
+{
+    height: 280px;
+}
+
+#online-box #scroll-div #frnd-div
+{
+    width: 240px;
+    height: 40px;
+    margin-bottom: 6px;
+}
+
+#online-box #scroll-div #frnd-div #onuser-img
+{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#online-box #online-user
+{
+    height: 35px;
+    padding-bottom: 10px;
+}
+
+
+#online-user p
+{
+    font-size: 25px;
+    font-weight: bolder;
+
+    margin-top: 0;
+    margin-left: 20px;
+    padding-top: 2px;
+}
+
+#online-box hr
+{
+    position: relative;
+    top: 4px;
+
+    width: 96%;
+    margin: 0 auto;
+
+    border-style: groove;
+    border-color: rgba(128, 128, 128, .36);
+}
+
+#online-box #scroll-div .frnd-on
+{
+    font-size: 15px;
+
+    position: relative;
+    top: 5px;
+
+    display: inline;
+
+    width: 200px;
+    padding: 5px;
+}
+
+#online-box #scroll-div #active-light-on
+{
+    position: relative;
+    top: -20px;
+
+    width: 10px;
+    height: 10px;
+    margin-left: 195px;
+
+    border-radius: 10px;
+    background-color: green;
+}
+
+#online-box #scroll-div #active-light-off
+{
+    position: relative;
+    top: -25px;
+
+    margin-left: 180px;
+}
+
+#online-box #online-user:hover
+{
+    cursor: pointer;
+
+    background-color: #eee;
+}
+
+#online-box #scroll-div .frnd-on:hover
+{
+    cursor: pointer;
+
+    border-radius: 10px;
+    background-color: #cecece;
+}
+
+body #online-box #scroll-div:hover
+{
+    overflow-y: auto;
+}
+
+/****************END Online Box********************/
+
+/****************START Post Box********************/
+
+body #posts-div
+{
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 70px;
+
+    border-style: groove;
+    border-color: #ddd;
+    border-radius: 10px;
+    background-color: #1c293a;
+}
+
+body #posts-div #sendpost
+{
+    width: 60%;
+    margin-left: 20%;
+}
+
+#sendpost form #postmsg
+{
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+
+    background-color: #c4c4c4;
+}
+
+#sendpost form #post-btn
+{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+
+    position: relative;
+
+    margin-top: 10px;
+    margin-left: 85%;
+    padding: 5px 20px;
+
+    border-style: groove;
+    border-color: grey;
+    border-radius: 5px;
+    outline: grey;
+    background-color: white;
+}
+
+#sendpost form #post-btn:hover
+{
+    background-color: #eee;
+}
+
+#posts-div #post-hr
+{
+    width: 100%;
+    margin-left: 0;
+
+    border-style: groove;
+    border-color: #ddd;
+}
+
+#posts-div #showposts
+{
+    width: 85%;
+    margin-top: 20px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+#showposts #dividepost
+{
+    width: 115%;
+    margin-left: -5%;
+
+    border-style: groove;
+    border-color: #eee;
+}
+
+#showposts #singlepost
+{
+    margin-bottom: 40px;
+
+    border: 2px #eee;
+    border-style: groove;
+    border-radius: 10px;
+    background-color: #d6d6cc;
+}
+
+#showposts #singlepost hr
+{
+    width: 96%;
+    margin-right: 0;
+    margin-left: 10px;
+
+    border-style: groove;
+    border-color: black;
+}
+
+#showposts #singlepost #pusername
+{
+    font-size: 1.3em;
+
+    position: absolute;
+
+    margin-top: -35px;
+    margin-bottom: 0;
+    margin-left: 60px;
+
+    color: blue;
+}
+
+#showposts #singlepost #post-time
+{
+    font-size: 14px;
+
+    margin-top: 0;
+    margin-left: 60px;
+}
+
+#showposts #singlepost #postspace
+{
+    margin-right: -5%;
+    padding: 10px;
+}
+
+#showposts #singlepost #postspace #puserpost
+{
+    font-size: 1.2em;
+
+    width: 75%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#showposts #singlepost #pusername:hover
+{
+    cursor: pointer;
+}
+
+#singlepost #user-img
+{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#singlepost .like-btn
+{
+    position: absolute;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 5px 16px;
+
+    border: 1px grey;
+    border-style: groove;
+    border-radius: 5px;
+    outline: grey;
+    background: white;
+}
+
+#singlepost .dislike-btn
+{
+    font-weight: 700;
+
+    position: absolute;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 5px 16px;
+
+    color: white;
+    border: 1px rgb(129, 129, 183);
+    border-style: groove;
+    border-radius: 5px;
+    outline: grey;
+    background: rgba(0, 0, 255, .83);
+}
+
+#singlepost .comment-btn
+{
+    position: absolute;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    padding: 5px 16px;
+
+    border: 1px grey;
+    border-style: groove;
+    border-radius: 5px;
+    outline: grey;
+    background: white;
+}
+
+#singlepost #likes-count
+{
+    position: absolute;
+
+    margin-top: 10px;
+    margin-left: 65px;
+
+    color: white;
+}
+
+#singlepost #comms-count
+{
+    position: absolute;
+
+    margin-top: 10px;
+    margin-left: 200px;
+
+    color: white;
+}
+
+#singlepost .comment-div
+{
+    display: none;
+
+    width: 97%;
+    margin-top: 40px;
+    padding: 10px;
+
+    border-top: 1px black;
+    border-top-style: groove;
+    background-color: #eee;
+}
+
+#singlepost .comment-div #postcomment
+{
+    width: 90%;
+    margin-left: 50px;
+}
+
+#singlepost .comment-div #postcomment .cmnt-msg
+{
+    width: 65%;
+    height: 35px;
+}
+
+#singlepost .comment-div #postcomment #cmnt-img
+{
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+    margin-left: -40px;
+}
+
+#singlepost .comment-div #postcomment .cmnt-btn
+{
+    margin-left: 5px;
+    padding: 5px 12px;
+
+    border-style: groove;
+    border-color: #9e9e9e;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 2px 2px 15px grey;
+}
+
+#singlepost .comment-div .singlecomment
+{
+    margin-top: 10px;
+    padding: 15px;
+}
+
+#singlepost .comment-div .singlecomment #usercmnt
+{
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#singlepost .comment-div .singlecomment hr
+{
+    width: 100%;
+    margin-right: 0;
+    margin-left: -10px;
+
+    border-style: groove;
+    border-color: #eee;
+}
+
+#singlepost .comment-div .singlecomment #usercmnt #cmnt_user_name
+{
+    font-family: sans-serif;
+    font-size: 1.3em;
+
+    display: inline;
+
+    cursor: pointer;
+
+    color: blue;
+}
+
+#singlepost .comment-div .singlecomment #usercmnt #cmnt_user_msg
+{
+    font-family: sans-serif;
+    font-size: 15px;
+
+    display: inline;
+}
+/****************END Post Box********************/
+
+#logout-txt
+{
+    color: white;
+}
+
+#logout-txt a
+{
+    color: #516ffa;
+}
+
+#logout-txt a:hover
+{
+    color: red;
+}

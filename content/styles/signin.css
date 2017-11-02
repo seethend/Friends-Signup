@@ -1,0 +1,240 @@
+html
+{
+    font-family: sans-serif;
+
+    background-color: #f5f8fa;
+}
+
+body h1
+{
+    font-family: sans-serif;
+    font-size: 3em;
+    font-weight: bolder;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#main-logo
+{
+    display: block;
+
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+fieldset
+{
+    width: 400px;
+    margin: auto;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 41px;
+
+    border: 2px solid green;
+    border-style: solid;
+    background-color: white;
+    box-shadow: 5px 5px 8px grey;
+}
+
+legend
+{
+    font-size: 1.3em;
+    font-weight: bold;
+
+    padding: 3px 20px;
+
+    color: white;
+    border-width: medium;
+    border-style: solid;
+    border-color: green;
+    border-radius: 8px;
+    background: transparent;
+}
+
+table
+{
+    border-spacing: 20px;
+    border-collapse: separate;
+}
+
+.overlay
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+
+    overflow-y: hidden;
+
+    width: 0;
+    height: 100%;
+
+    transition: 1.5s;
+
+    background-color: rgba(0,0,0, .9);
+}
+
+.overlay-content
+{
+    position: relative;
+    left: -10px;
+
+    width: 50%;
+    margin: 0 auto;
+
+    color: white;
+}
+
+.overlay-content form fieldset
+{
+    padding-top: 5%;
+    padding-right: 11%;
+    padding-bottom: 5%;
+    padding-left: 4%;
+
+    background-color: transparent;
+    background-color: transparent;
+}
+
+
+#pass,
+#user,
+#iuser,
+#ifirst,
+#ilast,
+#ipass,
+#iemail
+{
+    width: 230px;
+    height: 36px;
+    margin-left: 30px;
+    padding: 5%;
+
+    border-style: groove;
+    border-radius: 5px;
+    outline: grey;
+}
+
+#iuser,
+#ifirst,
+#ilast,
+#ipass,
+#iemail
+{
+    width: 300px;
+    padding: 4%;
+
+    border-style: hidden;
+}
+
+.overlay .closebtn:hover,
+.overlay .closebtn:focus
+{
+    color: red;
+}
+
+.overlay .closebtn
+{
+    font-size: 5em;
+
+    position: absolute;
+    top: 20px;
+    left: 700px;
+
+    transition: .3s;
+    text-decoration: none;
+
+    color: green;
+}
+
+#but0
+{
+    font-weight: 700;
+
+    margin-right: 25px;
+    margin-left: 35px;
+    padding: 8px 16px;
+
+    transition: background-color .5s;
+
+    border-style: solid;
+    border-color: #000;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px grey;
+}
+
+#but1
+{
+    font-weight: 700;
+
+    padding: 8px 16px;
+
+    transition: background-color .5s;
+
+    border-style: solid;
+    border-color: #000;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px grey;
+}
+
+#but2
+{
+    font-weight: 900;
+
+    margin-right: 25px;
+    margin-left: 35px;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+
+    transition: .3s;
+    transition: background-color 1s;
+
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 4px 4px 5px black;
+}
+
+#but0:hover,
+#but1:hover
+{
+    color: white;
+    /*background-color: #DDD;
+    border-color: black;*/
+    background-color: black;
+}
+
+#but2:hover
+{
+    color: black;
+    border-color: black;
+    background-color: white;
+}
+
+#but0:focus,
+#but1:focus,
+#but2:focus
+{
+    outline: 0;
+}
+
+#pass:focus,
+#user:focus,
+#iuser:focus,
+#ifirst:focus,
+#ilast:focus,
+#ipass:focus,
+#iemail:focus
+{
+    border-style: double;
+    border-color: #10bbb3;
+    border-radius: 5px;
+}

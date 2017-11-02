@@ -1,0 +1,278 @@
+html
+{
+    font-family: sans-serif;
+
+    overflow-x: hidden;
+
+    background-color: #17222d;
+}
+
+body
+{
+    background-color: #17222d;
+}
+
+.navbar
+{
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+
+    width: 100%;
+
+    border-radius: 0;
+}
+
+.navbar-brand > img
+{
+    display: block;
+
+    width: 80px;
+    height: 40px;
+    margin-top: -10px;
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+    font-size: 15px;
+}
+
+#newfrndreq
+{
+    font-weight: 900;
+
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 115px;
+
+    margin: 0;
+    padding: 1px 5px;
+
+    color: white;
+    border-radius: 10px;
+    background: red;
+}
+
+#newmsgs
+{
+    font-weight: 900;
+
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 75px;
+
+    margin: 0;
+    padding: 1px 5px;
+
+    color: white;
+    border-radius: 10px;
+    background: red;
+}
+
+.dropdown-menu
+{
+    right: 10%;
+    left: 10%;
+}
+
+body #show-friends
+{
+    position: absolute;
+
+    overflow-y: hidden;
+
+    width: 200px;
+    height: 85%;
+    margin-top: 1%;
+    margin-left: 20px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 15px;
+    background-color: #1c293a;
+    box-shadow: 2px 2px 5px #909090;
+}
+
+#div-container
+{
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    background-color: #1c293a;
+}
+
+.new-friend
+{
+    height: 100px;
+    margin: 0 auto;
+
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #44728f;
+}
+
+.new-friend #friend-img
+{
+    margin-top: 5px;
+    margin-left: 5px;
+
+    border-radius: 20px;
+}
+
+.new-friend p
+{
+    font-size: 1.5em;
+
+    margin-top: -40px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+
+    color: white;
+}
+
+body #disp-msg
+{
+    overflow-y: hidden;
+
+    width: 50%;
+    height: 450px;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: 250px;
+
+    border-style: hidden;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 2px 2px 5px #909090;
+}
+
+#msgContainer
+{
+    position: relative;
+    top: 0;
+    bottom: 45px;
+
+    overflow: auto;
+
+    width: 100%;
+    height: 430px;
+
+    background-color: white;
+}
+
+#disp-msg #newmymsg
+{
+    float: left;
+
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#disp-msg #newmymsg #mymsg
+{
+    font-size: 16px;
+
+    float: left;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    padding: 5px;
+
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: #dfe2e8;
+}
+
+#disp-msg #newfrndmsg
+{
+    float: right;
+
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#disp-msg #newfrndmsg #frndmsg
+{
+    font-size: 16px;
+
+    float: right;
+
+    margin-top: 0;
+    margin-right: 10px;
+    margin-bottom: 0;
+    padding: 5px;
+
+    color: white;
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: #4080ff;
+}
+
+#msgController
+{
+    position: absolute;
+    bottom: 30px;
+    left: 250px;
+
+    display: flex;
+
+    width: 60%;
+    height: 40px;
+}
+
+#txtMsg
+{
+    font-family: sans-serif;
+    font-size: 25px;
+
+    width: 700px;
+    height: 40px;
+}
+
+
+
+#show-typing
+{
+    position: absolute;
+    z-index: 12;
+
+    margin-top: -62px;
+    margin-left: 40%;
+}
+
+#show-typing #typing-gif
+{
+    z-index: 12;
+
+    width: 100px;
+    height: 31px;
+}
+
+
+body #disp-msg:hover,
+body #show-friends:hover
+{
+    overflow-y: auto;
+}
+
+.hovername:hover
+{
+    cursor: pointer;
+
+    text-decoration-color: blue;
+}
+
+.new-friend:hover
+{
+    cursor: pointer;
+
+    background-color: rgb(147, 80, 80);
+}

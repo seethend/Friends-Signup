@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+    <display-name>Friends SignUp!!!</display-name>
+    <description>Friends SignUp!!!</description>
+    
+    <filter>  
+		<filter-name>f1</filter-name>  
+		<filter-class>com.web.filters.NoCacheFilter</filter-class>  
+	</filter>  
+	<filter-mapping>  
+		<filter-name>f1</filter-name>
+		<url-pattern>*.jsp</url-pattern>  
+	</filter-mapping> 
+    
+    <context-param>
+        <param-name>DB_DRIVER</param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>DB_URL</param-name>
+        <param-value>jdbc:mysql://localhost:3306/seethend</param-value>
+    </context-param>
+    <context-param>
+        <param-name>DB_USER</param-name>
+        <param-value>hr</param-value>
+    </context-param>
+    <context-param>
+        <param-name>DB_PASS</param-name>
+        <param-value>seeth</param-value>
+    </context-param>
+    <welcome-file-list>
+        <welcome-file>signin.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <context-param>
+        <param-name>BaseUrl</param-name>
+          <param-value>http://localhost:9999/signup/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>WsUrl</param-name>
+          <param-value>ws://localhost:9999/signup/chat</param-value>
+    </context-param>
+</web-app>
