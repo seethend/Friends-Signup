@@ -1,0 +1,185 @@
+#overlay
+{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, .86);
+}
+
+#post-send
+{
+    position: relative;
+    z-index: 100;
+    top: 150px;
+
+    display: none;
+
+    width: 70%;
+    margin: 0 auto;
+}
+
+#popup-postsendmsg
+{
+    font-size: 20px;
+
+    width: 100%;
+    height: 170px;
+    margin: 0;
+
+    border-radius: 10px;
+    outline: black;
+}
+
+#popup-posteditmsg
+{
+    font-size: 20px;
+
+    width: 100%;
+    height: 170px;
+    margin: 0;
+
+    border-radius: 10px;
+    outline: black;
+}
+
+#popup-post-btn
+{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+
+    position: relative;
+    z-index: 100;
+
+    margin-top: 10px;
+    margin-left: 85%;
+    padding: 5px 20px;
+
+    border-radius: 5px;
+    outline: grey;
+    background-color: white;
+}
+
+#popup-post-upbtn
+{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+
+    position: relative;
+    z-index: 100;
+
+    margin-top: 10px;
+    margin-left: 85%;
+    padding: 5px 20px;
+
+    border-radius: 5px;
+    outline: grey;
+    background-color: white;
+}
+
+#popup-post-btn:hover
+{
+    background-color: #eee;
+}
+
+#popup-post-upbtn:hover
+{
+    background-color: #eee;
+}
+
+#post-edit
+{
+    position: relative;
+    z-index: 100;
+    top: 150px;
+
+    display: none;
+
+    width: 70%;
+    margin: 0 auto;
+}
+
+#close-popup
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+#edit-post-settings
+{
+    position: relative;
+    right: 25px;
+
+    float: right;
+
+    margin-top: 10px;
+}
+
+#edit-post-settings img
+{
+    width: 15px;
+    height: 15px;
+}
+
+#pop-content
+{
+    position: absolute;
+    z-index: 2;
+    right: -100px;
+
+    display: none;
+
+    width: 200px;
+    margin-top: 1px;
+    padding-top: 10px;
+
+    transition: display 1s;
+    text-align: center;
+
+    border-style: solid;
+    border-color: #aaa;
+    background-color: white;
+}
+
+#pop-content hr
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    border-color: #949494;
+}
+
+#pop-content p
+{
+    display: block;
+
+    padding: 2px;
+
+    text-decoration: none;
+
+    color: black;
+}
+
+#edit-post-settings:hover #pop-content
+{
+    display: block;
+
+    cursor: pointer;
+}
+
+#pop-content p:hover
+{
+    color: white;
+    background-color: #727272;
+}

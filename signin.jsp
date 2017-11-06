@@ -3,6 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<title>LOGIN</title>
 	<link rel="icon" type="image/png" href="images/logo.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	
 	<script type="text/javascript" src="scripts/signin.js"></script>
 	<link rel="stylesheet" type="text/css" href="content/styles/signin.css">
@@ -34,8 +39,8 @@
 	</div>
 	<br><br>
 	<div id="signupoverlay" class="overlay">
-	<br><br><br>
-		<a style="margin-left: 400px;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<br>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<div class="overlay-content">
 				<form action="loaddata.jsp" method="post">
 					<h2>Sign Up!!!</h2>

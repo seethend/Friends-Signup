@@ -208,7 +208,7 @@
 	
 </div>
 
-	<div id="posts-div"  style="margin-top: 10px;margin-left: 15%;">
+	<div id="posts-div"  style="margin-top: 10px;margin-left: 15%; width: 60%;">
 		<div id="showposts">
 			<c:forEach var="postrow" items="${postsresults.rows}">
 				<c:if test="${param.friendid==postrow.POST_USERID}">

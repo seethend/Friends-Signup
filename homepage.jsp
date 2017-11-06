@@ -14,6 +14,9 @@
 		<link rel="stylesheet" type="text/css" href="content/styles/homepage.css">
 		<script type="text/javascript" src="scripts/mainjs.js"></script>
 		<script type="text/javascript" src="scripts/chatroom.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="content/styles/popup.css">
+		<script type="text/javascript" src="scripts/popup.js"></script>
 		
 		<% String WsUrl = getServletContext().getInitParameter("WsUrl"); %>
 		
@@ -130,10 +133,10 @@
 
 		<div id="posts-div">
 			<div id="sendpost">
-				<form action="posts.jsp" method="post">
-					<textarea id="postmsg" name="pmsg"></textarea>
+				<div id="hide-on-popup">
+					<textarea id="postmsg" name="pmsg" onclick="popup_post_send()"></textarea>
 					<input id="post-btn" type="submit" value="Post">
-				</form>
+				</div>
 			</div>
 			<hr id="post-hr">
 
@@ -143,9 +146,17 @@
 						<div id="singlepost">
 							<img id="user-img" src=profilepics/${postrow.USERNAME}.jpg onerror="this.src = 'images/friendslogo.png';">
 							<p id="pusername" onclick="showprofile(${sessionScope.UID},${postrow.USER_ID},'${postrow.FIRSTNAME}');"><c:out value="${postrow.FIRSTNAME}"/></p>
+							<div id="edit-post-settings">
+								<img src="images/postedit.png">
+								<div id="pop-content">
+									<p onclick="popup_post_edit(${postrow.POSTID})">Edit Post</p>
+									<hr>
+									<p onclick="popup_post_delete(${postrow.POSTID})">Delete Post</p>
+								</div>
+							</div>
 							<p id="post-time"><c:out value="${postrow.POST_TIME}"/></p><hr>
 							<div id="postspace">
-								<p id="puserpost"><c:out value="${postrow.POST_MSG}"/></p>
+								<p id="puserpost" class="${postrow.POSTID}"><c:out value="${postrow.POST_MSG}"/></p>
 							</div>
 							<div id="${postrow.POSTID}">
 								<c:set var="ifbtn" value="True"/>
@@ -203,7 +214,7 @@
 										<p id="pusername" onclick="showprofile(${sessionScope.UID},${postrow.USER_ID},'${postrow.FIRSTNAME}');"><c:out value="${postrow.FIRSTNAME}"/></p>
 										<p id="post-time"><c:out value="${postrow.POST_TIME}"/></p><hr>
 										<div id="postspace">
-											<p id="puserpost"><c:out value="${postrow.POST_MSG}"/></p>
+											<p id="puserpost" class="${postrow.POSTID}"><c:out value="${postrow.POST_MSG}"/></p>
 										</div>
 										<div id="${postrow.POSTID}">
 											<c:set var="ifbtn" value="True"/>
@@ -260,7 +271,7 @@
 										<p id="pusername" onclick="showprofile(${sessionScope.UID},${postrow.USER_ID},'${postrow.FIRSTNAME}');"><c:out value="${postrow.FIRSTNAME}"/></p>
 										<p id="post-time"><c:out value="${postrow.POST_TIME}"/></p><hr>
 										<div id="postspace">
-											<p id="puserpost"><c:out value="${postrow.POST_MSG}"/></p>
+											<p id="puserpost" class="${postrow.POSTID}"><c:out value="${postrow.POST_MSG}"/></p>
 										</div>
 										<div id="${postrow.POSTID}">
 											<c:set var="ifbtn" value="True"/>
@@ -315,6 +326,33 @@
 				</c:forEach>
 			</div>
 		</div>
+
+
+
+
+
+
+		<div id="overlay">
+			<div id="post-send">
+				<textarea id="popup-postsendmsg" name="pmsg"></textarea>
+				<button id="popup-post-btn" onclick="sendpostmsg()">Post</button>
+			</div>
+
+			<div id="close-popup" onclick="close_popup()" >
+				
+			</div>
+
+			<div id="post-edit">
+				<div id="post-edit-bg">
+					<textarea id="popup-posteditmsg"></textarea>
+					<button id="popup-post-upbtn" title="see" onclick="updatePost(this.title)">Update</button>
+				</div>
+			</div>
+		</div>
+
+
+
+
 
 	</body>
 </html>
