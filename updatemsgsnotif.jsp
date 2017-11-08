@@ -31,7 +31,7 @@
 	<c:if test="${sessionScope.UID==msgcol.UPDATEUSERID}">
 		<c:set var="newmsgscount" value="${msgcount - msgcol.PAST_MSGS}" scope="page" />
 		<c:if test="${newmsgscount>0}">
-			<p  id="newmsgs"><c:out value="${newmsgscount}"/></p>
+			<span id="newmsgs"><c:out value="${newmsgscount}"/></span>
 		</c:if>
 	</c:if>
 </c:forEach>

@@ -36,7 +36,7 @@
 	<c:if test="${sessionScope.UID==reqcol.UPDATEUSERID}">
 		<c:set var="newrequests" value="${totalreqcount - reqcol.PAST_REQ}" scope="page" />
 		<c:if test="${newrequests>0}">
-			<p  id="newfrndreq"><c:out value="${newrequests}"/></p>
+			<span id="newfrndreq"><c:out value="${newrequests}"/></span>
 		</c:if>
 	</c:if>
 </c:forEach>

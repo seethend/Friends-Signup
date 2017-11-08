@@ -7,6 +7,7 @@ html
 
 body h1
 {
+	text-align: center;
     font-family: sans-serif;
     font-size: 3em;
     font-weight: bolder;
@@ -27,7 +28,7 @@ body h1
 fieldset
 {
     width: 400px;
-    margin: auto;
+    margin: 0 auto;
     padding-top: 20px;
     padding-right: 40px;
     padding-bottom: 41px;
@@ -55,8 +56,14 @@ legend
 
 table
 {
+	margin: 0 auto;
     border-spacing: 20px;
     border-collapse: separate;
+}
+
+.page-msg{
+	margin: 0 auto;
+	width: 50%;
 }
 
 .overlay
@@ -76,15 +83,26 @@ table
     background-color: rgba(0,0,0, .9);
 }
 
+.overlay #closeoverlay{
+	position: absolute;
+	width: 0px;
+	height: 100%;
+	z-index:2;
+}
+
 .overlay-content
 {
     position: relative;
-    left: -10px;
 
-    width: 50%;
+    width: 400px;
     margin: 0 auto;
 
     color: white;
+    z-index: 100;
+}
+
+.overlay-content h2{
+	text-align: center;
 }
 
 .overlay-content form fieldset
@@ -107,10 +125,11 @@ table
 #ipass,
 #iemail
 {
-    width: 230px;
+    width: 260px;
     height: 36px;
     margin-left: 30px;
     padding: 5%;
+    color: black;
 
     border-style: groove;
     border-radius: 5px;
@@ -145,7 +164,7 @@ table
 
     margin-left: 250px;
 
-    transition: .3s;
+    transition: 1s color;
     text-decoration: none;
 
     color: green;
@@ -156,7 +175,7 @@ table
     font-weight: 700;
 
     margin-right: 25px;
-    margin-left: 35px;
+    margin-left: 90px;
     padding: 8px 16px;
 
     transition: background-color .5s;
@@ -188,7 +207,7 @@ table
     font-weight: 900;
 
     margin-right: 25px;
-    margin-left: 35px;
+    margin-left: 135px;
     padding-top: 6px;
     padding-right: 10px;
     padding-bottom: 6px;

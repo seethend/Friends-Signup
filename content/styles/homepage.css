@@ -60,7 +60,7 @@ html:hover
     position: absolute;
     z-index: -1;
     top: 2px;
-    left: 115px;
+    left: 125px;
 
     margin: 0;
     padding: 1px 5px;
@@ -517,7 +517,7 @@ hr
 {
     font-size: 2em;
 
-    margin-top: -8px;
+    margin-top: -11px;
 }
 
 #msg-box #close-msgbox:hover p

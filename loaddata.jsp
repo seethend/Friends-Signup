@@ -47,7 +47,7 @@
 		
 		
 		<c:redirect url="signin.jsp">
-			<c:param name="signupMsg" value="Congratulations ! You have Successfully Registered" />
+			<c:param name="successMsg" value=" You have Successfully Registered" />
 		</c:redirect>
 
 	</c:if>
