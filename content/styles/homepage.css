@@ -657,18 +657,20 @@ hr
 {
     position: absolute;
     z-index: 12;
-    right: 360px;
+    right: 375px;
     bottom: 40px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 20px;
 }
 
 #show-typing #typing-gif
 {
-    position: fixed;
     z-index: 12;
-    right: 380px;
-    bottom: 37px;
 
-    width: 65px;
+    width: 75px;
     height: 25px;
 
     border-radius: 20px;

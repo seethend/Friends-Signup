@@ -22,6 +22,8 @@ function getMessages(mid,fid){
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
 			document.getElementById("msgContainer").innerHTML = this.responseText;
+			var elem = document.getElementById('msgContainer');
+			elem.scrollTop = elem.scrollHeight;
 		}
 	};
 	xhttp.open("POST", "getmessages.jsp", true);

@@ -225,15 +225,18 @@ body #disp-msg
     height: 40px;
 }
 
-
-
 #show-typing
 {
     position: absolute;
     z-index: 12;
 
-    margin-top: -62px;
+    margin-top: -80px;
     margin-left: 40%;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 20px;
 }
 
 #show-typing #typing-gif
