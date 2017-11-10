@@ -911,7 +911,7 @@ body #online-box #hidescroll-div
     overflow: hidden;
 
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
 body #online-box #hidescroll-div-two
@@ -1330,17 +1330,29 @@ body #posts-div #sendpost
 }
 /****************END Post Box********************/
 
-#logout-txt
+/****************START LOGOUT********************/
+
+#logout-logo
 {
+    display: block;
+
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#logout-p
+{
+    margin: 0 auto;
+
+    text-align: center;
+
     color: white;
 }
 
-#logout-txt a
-{
-    color: #516ffa;
-}
-
-#logout-txt a:hover
+#logout-p a:hover
 {
     color: red;
 }
+
+/****************END LOGOUT********************/

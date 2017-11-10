@@ -38,11 +38,11 @@
     
     <context-param>
         <param-name>BaseUrl</param-name>
-          <param-value>http://localhost:9999/signup/</param-value>
+          <param-value>http://192.168.1.2:9999/signup/</param-value>
     </context-param>
     <context-param>
         <param-name>WsUrl</param-name>
-          <param-value>ws://localhost:9999/signup/chat</param-value>
+          <param-value>ws://192.168.1.2:9999/signup/chat</param-value>
     </context-param>
   
     <error-page>

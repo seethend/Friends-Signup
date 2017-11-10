@@ -207,37 +207,3 @@ function getmsgupdates() {
 	xhttp.open("GET", "updatemsgsnotif.jsp", true);
 	xhttp.send();
 }
-
-
-function mTyping(mid) {
-	var x = document.getElementById("refreshbtn");
-	var fid = x.name;
-
-	var xhttp;
-	xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-		    document.getElementById("show-typing").innerHTML = this.responseText;
-		}
-	};
-	xhttp.open("GET", "typing.jsp?myid="+mid+"&frid="+fid, true);
-	xhttp.send();
-}
-
-function mNotTyping(mid) {
-	setTimeout(
-		function(){
-			var x = document.getElementById("refreshbtn");
-			var fid = x.name;
-
-			var xhttp;
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-				    document.getElementById("show-typing").innerHTML = this.responseText;
-				}
-			};
-			xhttp.open("GET", "notyping.jsp?myid="+mid+"&frid="+fid, true);
-			xhttp.send();
-		},3000);
-}

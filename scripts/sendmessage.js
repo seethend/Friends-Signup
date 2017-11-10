@@ -62,33 +62,3 @@ function getmsgupdates() {
 	xhttp.send();
 }
 
-function mTyping(mid) {
-	var fid = id;
-
-	var xhttp;
-	xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-		    document.getElementById("show-typing").innerHTML = this.responseText;
-		}
-	};
-	xhttp.open("GET", "typing.jsp?myid="+mid+"&frid="+fid, true);
-	xhttp.send();
-}
-
-function mNotTyping(mid) {
-	setTimeout(
-		function(){
-			var fid = id;
-
-			var xhttp;
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-				    document.getElementById("show-typing").innerHTML = this.responseText;
-				}
-			};
-			xhttp.open("GET", "notyping.jsp?myid="+mid+"&frid="+fid, true);
-			xhttp.send();
-		},3000);
-}
