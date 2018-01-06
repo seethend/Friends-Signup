@@ -1,5 +1,6 @@
 function popup_post_send(){
     document.getElementById('overlay').style.display = 'block';
+    document.getElementById('overlay').style.top = '0px';
     document.getElementById('post-send').style.display = 'block';
     document.getElementById('hide-on-popup').style.display = 'none';
     document.getElementById('sendpost').style.height = '180px';
