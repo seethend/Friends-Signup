@@ -9,7 +9,7 @@ We have to login into the application using the credentials we signup with..
 
 Once logged in we reach homepage where we can see our posts and other users posts and also we can post or comment and like a post
 
-![Alt text](shots/home.png?raw=true "Homepage")
+![Alt text](shots/homepage.png?raw=true "Homepage")
 
 In the Users page we can see all users in the system and send friend request or unfriend other users
 
