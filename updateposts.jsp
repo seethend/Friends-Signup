@@ -26,10 +26,10 @@
 	<sql:update dataSource="${snapshot}" var="likeresults">
 		INSERT INTO POSTLIKES (POSTID,USERID) VALUES(?,?)
 		<sql:param value="${param.postid}"/>
-		<sql:param value="${param.myid}"/>
+		<sql:param value="${sessionScope.UID}"/>
 	</sql:update>
 	<c:if test="${likeresults>=1}">
-		<button name="${param.postid}" class="dislike-btn" onclick="dislikepost(this.name,${sessionScope.UID});">Like</button>
+		<button name="${param.postid}" class="dislike-btn" onclick="dislikepost(this.name);">Like</button>
 		<c:set var="lc" value="True"/>
 		<c:forEach var="alikes" items="${addlikes.rows}">
 			<c:if test="${alikes.POSTID==param.postid}">
@@ -50,10 +50,10 @@
 
 <c:if test='${work==dis}'>
 	<sql:update dataSource="${snapshot}" var="deletefriends">
-		DELETE FROM POSTLIKES WHERE POSTID=${param.postid} AND USERID=${param.myid}
+		DELETE FROM POSTLIKES WHERE POSTID=${param.postid} AND USERID=${sessionScope.UID}
 	</sql:update>
 	<c:if test="${deletefriends>=1}">
-		<button name="${param.postid}" class="like-btn" onclick="likepost(this.name,${sessionScope.UID});">Like</button>
+		<button name="${param.postid}" class="like-btn" onclick="likepost(this.name);">Like</button>
 		<c:forEach var="dlikes" items="${dellikes.rows}">
 			<c:if test="${dlikes.POSTID==param.postid}">
 				<c:choose>

@@ -25,14 +25,14 @@
 	
 	<c:forEach var="ch" items="${check.rows}">
 		
-		<c:if test="${ch.FRIENDS_ONE==param.myid}">
+		<c:if test="${ch.FRIENDS_ONE==sessionScope.UID}">
 			<c:if test="${ch.FRIENDS_TWO==param.friendid}">
 				<% System.out.println("INSIDE"); %>
 				<c:set var="shoot" value="False" scope="page" />
 			</c:if>
 		</c:if>
 
-		<c:if test="${ch.FRIENDS_TWO==param.myid}">
+		<c:if test="${ch.FRIENDS_TWO==sessionScope.UID}">
 			<c:if test="${ch.FRIENDS_ONE==param.friendid}">
 				<% System.out.println("INSIDE"); %>
 				<c:set var="shoot" value="False" scope="page" />
@@ -45,7 +45,7 @@
 	
 		<sql:update dataSource="${snapshot}" var="updaterequests">
 			INSERT INTO UPDATEFRIENDS(FRIENDS_ONE,FRIENDS_TWO,STATUS) VALUES(?,?,0)
-			<sql:param value="${param.myid}"/>
+			<sql:param value="${sessionScope.UID}"/>
 			<sql:param value="${param.friendid}"/>
 		</sql:update>
 		
@@ -54,7 +54,7 @@
 		</sql:query>
 		
 		<c:forEach var="forow" items="${getid.rows}">
-			<c:if test="${forow.FRIENDS_ONE==param.myid}">
+			<c:if test="${forow.FRIENDS_ONE==sessionScope.UID}">
 				<c:if test="${forow.FRIENDS_TWO==param.friendid}">
 					<c:set var="ufid" value="${forow.UFID}"/>
 					<p>Value: <c:out value="${ufid}"></c:out>
@@ -75,7 +75,7 @@
 
 <c:if test="${task==acc}">	
 	<sql:update dataSource="${snapshot}" var="updateaccepts">
-		UPDATE UPDATEFRIENDS SET STATUS = 1 WHERE FRIENDS_ONE=${param.friendid} AND FRIENDS_TWO = ${param.myid}
+		UPDATE UPDATEFRIENDS SET STATUS = 1 WHERE FRIENDS_ONE=${param.friendid} AND FRIENDS_TWO = ${sessionScope.UID}
 	</sql:update>
 	<c:if test="${page==1}">
 		<c:redirect url="users.jsp"/>
@@ -87,10 +87,10 @@
 
 <c:if test="${task==del}">
 	<sql:update dataSource="${snapshot}" var="deletefriends">
-		DELETE FROM UPDATEFRIENDS WHERE FRIENDS_ONE=${param.myid} AND FRIENDS_TWO=${param.friendid}
+		DELETE FROM UPDATEFRIENDS WHERE FRIENDS_ONE=${sessionScope.UID} AND FRIENDS_TWO=${param.friendid}
 	</sql:update>
 	<sql:update dataSource="${snapshot}" var="deletefriends">
-		DELETE FROM UPDATEFRIENDS WHERE FRIENDS_ONE=${param.friendid} AND FRIENDS_TWO=${param.myid}
+		DELETE FROM UPDATEFRIENDS WHERE FRIENDS_ONE=${param.friendid} AND FRIENDS_TWO=${sessionScope.UID}
 	</sql:update>
 	<c:if test="${page==1}">
 		<c:redirect url="users.jsp"/>

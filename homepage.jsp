@@ -41,39 +41,7 @@
 	</head>
 	<body onload="getupdates();">
 		
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button class="navbar-toggle" data-toggle='collapse' data-target='#mainnavbar'>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="homepage.jsp" class="navbar-brand"><img id="main-logo" src="images\friendslogo.png"></a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="mainnavbar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="homepage.jsp">Homepage</a></li>
-						<li class=""><a href="users.jsp">Users</a></li>
-						<li class=""><a href="friendrequests.jsp">FriendRequests<span id="newreq-div"><span id="newfrndreq"></span></span></a></li>
-						<li class=""><a href="friends.jsp">Friends</a></li>
-						<li class=""><a href="messages.jsp">Messages<span id="newmsgs-div"><span id="newmsgs"></span></span></a></li>
-						<li class="dropdown">
-							<a href="profile.jsp" class="dropdown-toggle" data-toggle='dropdown'>${sessionScope.FNAME}&nbsp;<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="profile.jsp">Profile</a></li>
-								<li><a href="settings.jsp">Settings</a></li>
-							</ul>
-						</li>
-					</ul>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="logout.jsp">Logout</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		<jsp:include page="navbar.jsp"/>
 
 		<sql:setDataSource var="snapshot" driver="${initParam.DB_DRIVER}" url="${initParam.DB_URL}" user="${initParam.DB_USER}" password="${initParam.DB_PASS}"/>
 
@@ -86,26 +54,7 @@
 		</sql:query>
 
 
-		<div id="msg-box">
-			<div id="frnd-div" onclick="togle();">
-				<p id="user-name" onclick="profileFromMsgBox(this.title);">seethend</p>
-			</div>
-			<div id="close-msgbox">
-				<p onclick="close_msg();proxy.logout();">&times;</p>
-			</div>
-			<div id="disp-msg">
-				<div id="msgPanel">
-					<div id="msgContainer">
-					</div>
-					<div id="msgController" title="see">
-						<textarea id="txtMsg" name="${sessionScope.UNAME}"
-							title="Enter to send message" oninput="proxy.typing()" 
-							onkeyup="proxy.sendMessage_keyup(event)"></textarea>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="show-typing"></div>
+		<jsp:include page="msgbox.jsp" />
 
 		<div id="online-box">
 			
@@ -163,7 +112,7 @@
 								<c:forEach var="likesrow" items="${postlikes.rows}">
 									<c:if test="${postrow.POSTID==likesrow.POSTID}">
 										<c:if test="${likesrow.USERID==sessionScope.UID}">
-											<button name="${postrow.POSTID}" class="dislike-btn" onclick="dislikepost(this.name,${sessionScope.UID});">Like</button>
+											<button name="${postrow.POSTID}" class="dislike-btn" onclick="dislikepost(this.name);">Like</button>
 											<c:set var="ifbtn" value="False"/>
 										</c:if>
 									</c:if>
@@ -181,15 +130,15 @@
 								</c:forEach>
 
 								<c:if test="${ifbtn}">
-									<button name="${postrow.POSTID}" class="like-btn" onclick="likepost(this.name,${sessionScope.UID});">Like</button>
+									<button name="${postrow.POSTID}" class="like-btn" onclick="likepost(this.name);">Like</button>
 								</c:if>
 							</div>
 							<button name="${postrow.POSTID}" class="comment-btn" onclick="showcomments(this.name)">Comment</button>
 							<div title="${postrow.POSTID}" class="comment-div">
 								<div id="postcomment">
 									<img id="cmnt-img" src=profilepics/${sessionScope.UNAME}.jpg onerror="this.src = 'images/friendslogo.png';">
-									<input class="cmnt-msg" title="${postrow.POSTID}" type="text" name="cmnt_msg" onkeydown="if (event.keyCode == 13) {postComm(${postrow.POSTID},${sessionScope.UID})}"/>
-									<button class="cmnt-btn" name="${postrow.POSTID}" onclick="postComm(${postrow.POSTID},${sessionScope.UID})">Comment</button>
+									<input class="cmnt-msg" title="${postrow.POSTID}" type="text" name="cmnt_msg" onkeydown="if (event.keyCode == 13) {postComm(${postrow.POSTID})}"/>
+									<button class="cmnt-btn" name="${postrow.POSTID}" onclick="postComm(${postrow.POSTID})">Comment</button>
 								</div>
 								<div title="${postrow.POSTID}" class="singlecomment">
 									<c:forEach var="commrow" items="${commentresults.rows}">
@@ -221,7 +170,7 @@
 											<c:forEach var="likesrow" items="${postlikes.rows}">
 												<c:if test="${postrow.POSTID==likesrow.POSTID}">
 													<c:if test="${likesrow.USERID==sessionScope.UID}">
-														<button id="" name="${postrow.POSTID}" class="dislike-btn" onclick="dislikepost(this.name,${sessionScope.UID});">Like</button>
+														<button id="" name="${postrow.POSTID}" class="dislike-btn" onclick="dislikepost(this.name);">Like</button>
 														<c:set var="ifbtn" value="False"/>
 													</c:if>
 												</c:if>
@@ -239,7 +188,7 @@
 											</c:forEach>
 
 											<c:if test="${ifbtn}">
-												<button name="${postrow.POSTID}" class="like-btn" onclick="likepost(this.name,${sessionScope.UID});">Like</button>
+												<button name="${postrow.POSTID}" class="like-btn" onclick="likepost(this.name);">Like</button>
 											</c:if>
 										</div>
 										<button name="${postrow.POSTID}" class="comment-btn" onclick="showcomments(this.name)">Comment</button>
@@ -278,7 +227,7 @@
 											<c:forEach var="likesrow" items="${postlikes.rows}">
 												<c:if test="${postrow.POSTID==likesrow.POSTID}">
 													<c:if test="${likesrow.USERID==sessionScope.UID}">
-														<button name="${postrow.POSTID}" class="dislike-btn" onclick="dislikepost(this.name,${sessionScope.UID});">Like</button>
+														<button name="${postrow.POSTID}" class="dislike-btn" onclick="dislikepost(this.name);">Like</button>
 														<c:set var="ifbtn" value="False"/>
 													</c:if>
 												</c:if>
@@ -296,7 +245,7 @@
 											</c:forEach>
 
 											<c:if test="${ifbtn}">
-												<button name="${postrow.POSTID}" class="like-btn" onclick="likepost(this.name,${sessionScope.UID});">Like</button>
+												<button name="${postrow.POSTID}" class="like-btn" onclick="likepost(this.name);">Like</button>
 											</c:if>
 										</div>
 										<button name="${postrow.POSTID}" class="comment-btn" onclick="showcomments(this.name)">Comment</button>

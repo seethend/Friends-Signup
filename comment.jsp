@@ -9,7 +9,7 @@
     <sql:update dataSource="${snapshot}" var="result">
         INSERT INTO POSTCOMMENTS (COMM_PID,COMM_UID,COMM_MSG,COMM_TIME) VALUES(?,?,?,NOW())
         <sql:param value="${param.postid}"/>
-        <sql:param value="${param.myid}"/>
+        <sql:param value="${sessionScope.UID}"/>
         <sql:param value="${param.cmnt}"/>
     </sql:update>
 </c:if>

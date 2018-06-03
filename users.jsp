@@ -52,39 +52,7 @@
 	</sql:query>
 	
 
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle='collapse' data-target='#mainnavbar'>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="homepage.jsp" class="navbar-brand"><img id="main-logo" src="images\friendslogo.png"></a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="mainnavbar">
-				<ul class="nav navbar-nav">
-					<li class=""><a href="homepage.jsp">Homepage</a></li>
-					<li class="active"><a href="users.jsp">Users</a></li>
-					<li class=""><a href="friendrequests.jsp">FriendRequests<span id="newreq-div"><span id="newfrndreq"></span></span></a></li>
-					<li class=""><a href="friends.jsp">Friends</a></li>
-					<li class=""><a href="messages.jsp">Messages<span id="newmsgs-div"><span id="newmsgs"></span></span></a></li>
-					<li class="dropdown">
-						<a href="profile.jsp" class="dropdown-toggle" data-toggle='dropdown'>${sessionScope.FNAME}&nbsp;<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="profile.jsp">Profile</a></li>
-							<li><a href="settings.jsp">Settings</a></li>
-						</ul>
-					</li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="logout.jsp">Logout</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<jsp:include page="navbar.jsp"/>
 		<br><br><br>
 	
 <div id="div-container">
@@ -103,9 +71,9 @@
 									<div style="top: 25%;" id="main-div">
 										<button id="req-btn">Request&nbsp;Sent</button>
 										<div id="a-content">
-											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
+											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
 											<hr>
-											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,${sessionScope.UID},1)">Cancel Request</a>
+											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,1)">Cancel Request</a>
 										</div>
 									</div>
 									<c:set var="check" value="False"/>
@@ -114,9 +82,9 @@
 									<div style="top: 25%;" id="main-div">
 										<button id="main-btn" style="top: 0;"><img src="images/tickmark.png" width="10px" height="10px" id="btn-img">Friend</button>
 										<div id="a-content">
-											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
+											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
 											<hr>
-											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,${sessionScope.UID},1)">Unfriend</a>
+											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,1)">Unfriend</a>
 										</div>
 									</div>
 									<c:set var="check" value="False"/>
@@ -127,11 +95,11 @@
 							<c:if test="${forow.FRIENDS_ONE==row.USER_ID}">
 								<c:if test="${forow.STATUS==0}">
 									<div style="top: 25%;" id="main-div">
-										<button id="main-btn"  style="top: 0;" name="${row.USER_ID}" onclick="sendParam(this.name,${sessionScope.UID},1)">Accept</button>
+										<button id="main-btn"  style="top: 0;" name="${row.USER_ID}" onclick="sendParam(this.name,1)">Accept</button>
 										<div id="a-content">
-											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
+											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
 											<hr>
-											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,${sessionScope.UID},1)">Cancel Request</a>
+											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,1)">Cancel Request</a>
 										</div>
 									</div>
 									<c:set var="check" value="False"/>
@@ -140,9 +108,9 @@
 									<div style="top: 25%;" id="main-div">
 										<button id="main-btn"  style="top: 0;"><img src="images/tickmark.png" width="10px" height="10px" id="btn-img">Friend</button>
 										<div id="a-content">
-											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
+											<a id="${forow.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
 											<hr>
-											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,${sessionScope.UID},1)">Unfriend</a>
+											<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,1)">Unfriend</a>
 										</div>
 									</div>
 									<c:set var="check" value="False"/>
@@ -153,7 +121,7 @@
 
 					<c:if test="${check}">
 						<div style="top: 25%;" id="main-div">
-							<button id="main-btn"  style="top: 0;" type="button" name="${row.USER_ID}" onclick="sendRequestParam(this.name,${sessionScope.UID})">Add Friend</button>
+							<button id="main-btn"  style="top: 0;" type="button" name="${row.USER_ID}" onclick="sendRequestParam(this.name)">Add Friend</button>
 						</div>
 					</c:if> 
 			</div><br>
@@ -161,27 +129,7 @@
 	</c:forEach>
 </div>
 
-<div id="msg-box">
-	<div id="frnd-div" onclick="togle();">
-		<p id="user-name" onclick="profileFromMsgBox(this.title);">seethend</p>
-	</div>
-	<div id="close-msgbox">
-		<p onclick="close_msg();proxy.logout();">&times;</p>
-	</div>
-	<div id="disp-msg">
-		<div id="msgPanel">
-			<div id="msgContainer">
-			</div>
-			<div id="msgController" title="see">
-				<textarea id="txtMsg" name="${sessionScope.UNAME}"
-							title="Enter to send message" oninput="proxy.typing()" 
-							onkeyup="proxy.sendMessage_keyup(event)"></textarea>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div id="show-typing"></div>
+<jsp:include page="msgbox.jsp" />
 
 <div id="online-box">
 	

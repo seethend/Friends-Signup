@@ -22,11 +22,11 @@
     </context-param>
     <context-param>
         <param-name>DB_URL</param-name>
-        <param-value>jdbc:mysql://localhost:3306/seethend</param-value>
+        <param-value>jdbc:mysql://localhost/seethend</param-value>
     </context-param>
     <context-param>
         <param-name>DB_USER</param-name>
-        <param-value>hr</param-value>
+        <param-value>root</param-value>
     </context-param>
     <context-param>
         <param-name>DB_PASS</param-name>
@@ -38,13 +38,13 @@
     
     <context-param>
         <param-name>BaseUrl</param-name>
-          <param-value>http://192.168.1.2:9999/signup/</param-value>
+          <param-value>http://192.168.1.2:8080/sign</param-value>
     </context-param>
     <context-param>
         <param-name>WsUrl</param-name>
-          <param-value>ws://192.168.1.2:9999/signup/chat</param-value>
+          <param-value>ws://192.168.1.2:8080/sign/chat</param-value>
     </context-param>
-  
+    
     <error-page>
       <error-code>404</error-code>
       <location>/signin.jsp</location>

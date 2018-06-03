@@ -30,7 +30,7 @@
 					<c:if test="${row.USER_ID==forow.FRIENDS_TWO}">
 						<div id="frnd-div">
 							<img id="onuser-img" src=profilepics/${row.USERNAME}.jpg onerror="this.src = 'images/friendslogo.png';">
-							<p class="frnd-on" id="${forow.MSGCHN}" title="${row.FIRSTNAME}" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();"><c:out value="${row.FIRSTNAME}"/></p>
+							<p class="frnd-on" id="${forow.MSGCHN}" title="${row.FIRSTNAME}" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();"><c:out value="${row.FIRSTNAME}"/></p>
 							<c:if test="${row.ACTIVE==1}">
 								<p id="active-light-on"></p>
 							</c:if>
@@ -80,7 +80,7 @@
 					<c:if test="${row.USER_ID==forow.FRIENDS_ONE}">
 						<div id="frnd-div">
 							<img id="onuser-img" src=profilepics/${row.USERNAME}.jpg onerror="this.src = 'images/friendslogo.png';">
-							<p class="frnd-on" id="${forow.MSGCHN}" title="${row.FIRSTNAME}" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();"><c:out value="${row.FIRSTNAME}"/></p>
+							<p class="frnd-on" id="${forow.MSGCHN}" title="${row.FIRSTNAME}" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();"><c:out value="${row.FIRSTNAME}"/></p>
 							<c:if test="${row.ACTIVE==1}">
 								<p id="active-light-on"></p>
 							</c:if>

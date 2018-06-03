@@ -39,39 +39,7 @@
 </head>
 <body onload="getupdates();">
 		
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle='collapse' data-target='#mainnavbar'>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="homepage.jsp" class="navbar-brand"><img id="main-logo" src="images\friendslogo.png"></a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="mainnavbar">
-				<ul class="nav navbar-nav">
-					<li class=""><a href="homepage.jsp">Homepage</a></li>
-					<li class=""><a href="users.jsp">Users</a></li>
-					<li class="active"><a href="friendrequests.jsp">FriendRequests<span id="newreq-div"><span id="newfrndreq"></span></span></a></li>
-					<li class=""><a href="friends.jsp">Friends</a></li>
-					<li class=""><a href="messages.jsp">Messages<span id="newmsgs-div"><span id="newmsgs"></span></span></a></li>
-					<li class="dropdown">
-						<a href="profile.jsp" class="dropdown-toggle" data-toggle='dropdown'>${sessionScope.FNAME}&nbsp;<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="profile.jsp">Profile</a></li>
-							<li><a href="settings.jsp">Settings</a></li>
-						</ul>
-					</li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="logout.jsp">Logout</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<jsp:include page="navbar.jsp"/>
 		<br><br><br>
 
 	<sql:setDataSource var="snapshot" driver="${initParam.DB_DRIVER}" url="${initParam.DB_URL}" user="${initParam.DB_USER}" password="${initParam.DB_PASS}"/>
@@ -92,11 +60,11 @@
 					<!-- <p>Seethend Reddy</p> -->
 					<p class="hovername" id="${row.USER_ID}" onclick="showprofile(${sessionScope.UID},this.id,'${row.FIRSTNAME}');"><c:out value="${row.FIRSTNAME}"/></p>
 					<div style="top: 25%;" id="main-div">
-						<button id="main-btn" name="${row.USER_ID}" onclick="sendParam(this.name,${sessionScope.UID},2)">Accept</button>
+						<button id="main-btn" name="${row.USER_ID}" onclick="sendParam(this.name,2)">Accept</button>
 						<div id="a-content">
-							<a id="${row.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},${sessionScope.UID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
+							<a id="${row.MSGCHN}" href="#" onclick="showbox(${row.USER_ID},'${row.FIRSTNAME}',this.id);proxy.login();">Message</a>
 							<hr>
-							<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,${sessionScope.UID},2)">Cancel Request</a>
+							<a id="${row.USER_ID}" href="#" onclick="sendDelete(this.id,2)">Cancel Request</a>
 						</div>
 					</div>
 				</div><br>
@@ -105,27 +73,7 @@
 	</c:forEach>
 </div>
 
-<div id="msg-box">
-	<div id="frnd-div" onclick="togle();">
-		<p id="user-name" onclick="profileFromMsgBox(this.title);">seethend</p>
-	</div>
-	<div id="close-msgbox">
-		<p onclick="close_msg();proxy.logout();">&times;</p>
-	</div>
-	<div id="disp-msg">
-		<div id="msgPanel">
-			<div id="msgContainer">
-			</div>
-			<div id="msgController" title="see">
-				<textarea id="txtMsg" name="${sessionScope.UNAME}"
-							title="Enter to send message" oninput="proxy.typing()" 
-							onkeyup="proxy.sendMessage_keyup(event)"></textarea>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div id="show-typing"></div>
+<jsp:include page="msgbox.jsp" />
 
 
 <div id="online-box">

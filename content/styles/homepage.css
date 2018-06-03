@@ -198,7 +198,7 @@ html:hover
     top: 0;
     right: 15px;
 
-    width: 90px;
+    width: 110px;
     height: 33px;
 
     color: black;
@@ -216,7 +216,7 @@ html:hover
     position: absolute;
     right: 15px;
 
-    width: 100px;
+    width: 130px;
     height: 33px;
 
     border-style: groove;
@@ -1107,6 +1107,7 @@ body #posts-div #sendpost
 
 #showposts #singlepost
 {
+	margin-top: 20px;
     margin-bottom: 40px;
 
     border: 2px #eee;

@@ -29,7 +29,7 @@ function onlineboxtogle() {
 }
 
 
-function showbox(frndid,myid,frndname,msgRoom) {
+function showbox(frndid,frndname,msgRoom) {
 	interval=2000;
   	document.getElementById('disp-msg').style.display = 'block';
 	document.getElementById("msg-box").style.display='block';
@@ -40,10 +40,10 @@ function showbox(frndid,myid,frndname,msgRoom) {
 	document.getElementById('disp-msg').title = frndid;
 	document.getElementById('txtMsg').style.display = 'block';
 	
-	getMessages(myid,frndid);
+	getMessages(frndid);
 }
 
-function getMessages(mid,fid){
+function getMessages(fid){
 	var xhttp;
 	xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
@@ -55,7 +55,7 @@ function getMessages(mid,fid){
 	};
 	xhttp.open("POST", "getmessages.jsp", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("myid="+mid+"&frid="+fid);
+	xhttp.send("frid="+fid);
 }
 
 function showdiv(id) {
@@ -71,7 +71,7 @@ function showdiv(id) {
 	}
 }
 
-function likepost(pid,mid) {
+function likepost(pid) {
 	var xhttp;
 	xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -81,10 +81,10 @@ function likepost(pid,mid) {
 	};
 	xhttp.open("POST", "updateposts.jsp", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("postid="+pid+"&myid="+mid+"&work=like");
+	xhttp.send("postid="+pid+"&work=like");
 }
 
-function dislikepost(pid,mid) {
+function dislikepost(pid) {
 	var xhttp;
 	xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -94,7 +94,7 @@ function dislikepost(pid,mid) {
 	};
 	xhttp.open("POST", "updateposts.jsp", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("postid="+pid+"&myid="+mid+"&work=dislike");
+	xhttp.send("postid="+pid+"&work=dislike");
 }
 
 
@@ -110,16 +110,16 @@ function profileFromMsgBox(name){
 	window.location = "friendprofile.jsp?friendid="+id+"&fname="+name;
 }
 
-function sendParam(btname,frId,page) {
-	window.location = "updatefriends.jsp?friendid="+btname+"&myid="+frId+"&work=accept&page="+page;
+function sendParam(frId,page) {
+	window.location = "updatefriends.jsp?friendid="+frId+"&work=accept&page="+page;
 }
 
-function sendDelete(btname,frId,page) {
-	window.location = "updatefriends.jsp?friendid="+btname+"&myid="+frId+"&work=delete&page="+page;
+function sendDelete(frId,page) {
+	window.location = "updatefriends.jsp?friendid="+frId+"&work=delete&page="+page;
 }
 
-function sendRequestParam(btname,frId) {
-	window.location = "updatefriends.jsp?friendid="+btname+"&myid="+frId+"&work=request";
+function sendRequestParam(frId) {
+	window.location = "updatefriends.jsp?friendid="+frId+"&work=request";
 }
 
 function showcomments(postid){
@@ -137,7 +137,7 @@ function showcomments(postid){
 	}
 }
 
-function postComm(postid,uid) {
+function postComm(postid) {
 	var xhttp;
 	var cmntmsg = document.getElementsByClassName('cmnt-msg');
 	var k;
@@ -160,7 +160,7 @@ function postComm(postid,uid) {
 				};
 				xhttp.open("POST", "comment.jsp", true);
 				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send("postid="+postid+"&myid="+uid+"&cmnt="+cmsg);
+				xhttp.send("postid="+postid+"&cmnt="+cmsg);
 			}
 		}
 	}		
